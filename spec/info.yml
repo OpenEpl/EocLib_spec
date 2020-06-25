@@ -1,0 +1,32 @@
+CMakeName: EocSpec
+Cmd:
+  申请内存:
+    CppName: e::lib::spec::MMM::Alloc
+    ReturnDataType: intptr_t
+    Parameters:
+      - DataType: intptr_t
+      - DataType: bool
+        Optional: true
+  释放内存:
+    CppName: e::lib::spec::MMM::Free
+    Parameters:
+      - DataType: intptr_t
+  取变量地址:
+    CppName: e::lib::spec::MMM::AddressOf
+    ReturnDataType: intptr_t
+    Parameters:
+      - DataType: "*"
+  取变量数据地址:
+    CppName: e::lib::spec::MMM::DataAddressOf
+    ReturnDataType: intptr_t
+    Parameters:
+      - DataType: "*"
+  调试输出:
+    CppName: EOC_DEBUG_VIEW_OBJECT
+    Parameters:
+      - DataType: "*"
+        VarArgs: true
+        Optional: true
+Type: {}
+Constant: {}
+Enum: {}

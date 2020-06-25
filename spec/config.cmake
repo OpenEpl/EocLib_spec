@@ -1,0 +1,8 @@
+if(NOT EocSpec_FOUND)
+	if(NOT TARGET EocSpec)
+		add_subdirectory(${CMAKE_CURRENT_LIST_DIR} ${CMAKE_BINARY_DIR}/EocSpec)
+	endif()
+	set(EocSpec_FOUND True)
+	set(EocSpec_INCLUDE_DIRS "")
+	set(EocSpec_LIBRARIES EocSpec)
+endif()
