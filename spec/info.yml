@@ -21,6 +21,52 @@ Cmd:
     ReturnDataType: intptr_t
     Parameters:
       - DataType: "*"
+  取子程序地址:
+    CppName: e::lib::spec::MethodPtrUtils::GetMethodAddress
+    ReturnDataType: intptr_t
+    Parameters:
+      - DataType: e::system::methodptr
+  调用子程序:
+    CppName: e::lib::spec::MethodPtrUtils::Call
+    ReturnDataType: bool
+    Parameters:
+      - DataType: "*"
+      - DataType: "*"
+        Optional: true
+      - DataType: "*"
+        ByRef: true
+        Optional: true
+      - DataType: "*"
+        VarArgs: true
+        Optional: true
+  推迟调用子程序:
+    CppName: e::lib::spec::MethodPtrUtils::DelayCall
+    ReturnDataType: bool
+    Parameters:
+      - DataType: int32_t
+      - DataType: "*"
+      - DataType: "*"
+        Optional: true
+      - DataType: "*"
+        ByRef: true
+        Optional: true
+      - DataType: "*"
+        VarArgs: true
+        Optional: true
+  推迟调用子程序_高精度计时:
+    CppName: e::lib::spec::MethodPtrUtils::DelayCall
+    ReturnDataType: bool
+    Parameters:
+      - DataType: int32_t
+      - DataType: "*"
+      - DataType: "*"
+        Optional: true
+      - DataType: "*"
+        ByRef: true
+        Optional: true
+      - DataType: "*"
+        VarArgs: true
+        Optional: true
   调试输出:
     CppName: EOC_DEBUG_VIEW_OBJECT
     Parameters:
