@@ -28,4 +28,7 @@ TEST_CASE("Call a methodptr", "[MethodPtrUtils]")
     CHECK(x == 2);
     MethodPtrUtils::Call((e::system::methodptr)&MethodWithAStringArgument, std::nullopt, std::reference_wrapper(x), EOC_STR_CONST("Hello World"));
     CHECK(x == 11);
+    e::system::any y;
+    MethodPtrUtils::Call((e::system::methodptr)&MethodWithAStringArgument, std::nullopt, std::reference_wrapper(y), EOC_STR_CONST("Hello World"));
+    CHECK(y == e::system::any(11));
 }

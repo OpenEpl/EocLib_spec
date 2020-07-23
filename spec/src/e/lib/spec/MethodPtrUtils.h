@@ -23,7 +23,7 @@ namespace e::lib::spec::MethodPtrUtils
             return (intptr_t)x.cast<e::system::methodptr>();
         }
     }
-    
+
     template <typename TPtr, typename TReserve, typename TResult, typename... TArgs>
     bool Call(TPtr &&ptr, TReserve &&reserve, std::optional<std::reference_wrapper<TResult>> result, TArgs &&... args)
     {
@@ -35,7 +35,7 @@ namespace e::lib::spec::MethodPtrUtils
         auto realResult = caller.call((void *)GetMethodAddress(std::forward<TPtr>(ptr)), std::forward<TArgs>(args)...);
         if (result.has_value())
         {
-            result.value().get() = realResult;
+            result.value().get() = static_cast<TResult>(realResult);
         }
         return true;
     }
